@@ -161,8 +161,9 @@ ALTER TABLE IF EXISTS public.titles
 ``
 
 List the employee number, last name, first name, sex, and salary of each employee (2 points)
-SELECT emp_no, last_name, first_name, sex
-From employees
+SELECT s.emp_no, e.last_name, e.first_name, e.sex,s.salary
+From employees e
+JOIN salaries s ON e.emp_no = s.emp_no
 
 List the first name, last name, and hire date for the employees who were hired in 1986 (2 points)
 SELECT first_name, last_name, hire_date
